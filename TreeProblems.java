@@ -21,13 +21,12 @@ import java.util.*;
          */
 
         public static Set<Integer> different(Set<Integer> setA, Set<Integer> setB) {
-            TreeSet<Integer> result = new TreeSet<>(setA);
-            result.addAll(setB);
-
+            TreeSet<Integer> result = new TreeSet<>(setA); // Create a new TreeSet initialized with all elements from setA.            
+            result.addAll(setB); // Add all elements from setB to the result set.
 
             TreeSet<Integer> common = new TreeSet<>(setA);
             common.retainAll(setB);
-
+// Remove all common elements from the result set.            
             result.removeAll(common);
 
 
@@ -54,10 +53,11 @@ import java.util.*;
 
         public static void removeEven(Map<Integer, String> treeMap) {
             Iterator<Map.Entry<Integer, String>> iterator = treeMap.entrySet().iterator();
-
-            while(iterator.hasNext()){
+// Iterate through the entries of the TreeMap          
+            while(iterator.hasNext()){   // Get the next entry from the iterator.               
                 Map.Entry<Integer, String> entry = iterator.next();
-                if(entry.getKey() % 2 == 0){
+                 // Check if the key of the entry is even.             
+                if(entry.getKey() % 2 == 0){    // If the key is even, remove the entry from the map using the iterator.                  
                     iterator.remove();
                 }
             }
